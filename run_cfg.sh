@@ -24,11 +24,13 @@ mods="$mods --with-pcre-jit "
 mods="$mods --with-http_flv_module --with-http_mp4_module"
 
 mods2=""
+# https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng.git
 mods2="$mods2 --add-module=nginx-sticky-module-ng"
+# https://github.com/arut/nginx-rtmp-module
 mods2="$mods2 --add-module=nginx-rtmp-module"
 
 
-opts="--prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi"
+opts="--prefix=/usr --modules-path=/var/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi"
 
 cc_opt="-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2"
 ld_opt="-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now"
