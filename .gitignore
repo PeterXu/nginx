@@ -1,0 +1,4 @@
+*.log
+nginx-*-module*
+objs
+Makefile
