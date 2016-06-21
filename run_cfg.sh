@@ -30,7 +30,9 @@ mods2="$mods2 --add-module=nginx-sticky-module-ng"
 mods2="$mods2 --add-module=nginx-rtmp-module"
 
 
-opts="--prefix=/usr --modules-path=/var/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi"
+opts=""
+opts="$opts --prefix=/usr --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/run/nginx.lock --pid-path=/var/run/nginx.pid"
+opts="$opts --http-client-body-temp-path=/var/cache/nginx/body_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp"
 
 cc_opt="-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2"
 ld_opt="-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now"
