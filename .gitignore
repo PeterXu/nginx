@@ -1,4 +1,5 @@
 *.log
 nginx-*-module*
+lua-nginx-module*
 objs
 Makefile

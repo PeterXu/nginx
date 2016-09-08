@@ -28,7 +28,7 @@ mods2="$mods2 --add-module=nginx-sticky-module-ng"
 # https://github.com/arut/nginx-rtmp-module
 #mods2="$mods2 --add-module=nginx-rtmp-module"
 # https://github.com/openresty/lua-nginx-module
-#mods2="$mods2 --add-module=lua-nginx-module-0.10.5" # depends liblua5.1-0-dev
+mods2="$mods2 --add-module=lua-nginx-module-0.10.5" # depends liblua5.1-0-dev
 
 
 opts=""
